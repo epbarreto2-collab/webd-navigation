@@ -1,85 +1,562 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GameControl Store</title>
-</head>
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles/prueba.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+background:#0b0b14;
+color:white;
+
+}
+
+
+/* HEADER */
+
+header{
+
+height:90vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.7),
+rgba(0,0,0,.8)
+),
+url("https://images.unsplash.com/photo-1593305841991-05c297ba4575")
+center/cover;
+
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+}
+
+
+header h1{
+
+font-size:60px;
+color:#00ffcc;
+
+}
+
+
+header p{
+
+font-size:22px;
+margin:20px;
+
+}
+
+
+.btn{
+
+background:#00ffcc;
+color:black;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+
+/* MENU */
+
+nav{
+
+background:#111;
+padding:20px;
+
+position:sticky;
+top:0;
+
+}
+
+
+nav ul{
+
+display:flex;
+justify-content:center;
+gap:30px;
+list-style:none;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+
+}
+
+
+
+
+
+section{
+
+padding:60px 10%;
+
+}
+
+
+
+h2{
+
+text-align:center;
+margin-bottom:40px;
+color:#00ffcc;
+
+}
+
+
+
+
+/* PRODUCTOS */
+
+
+.productos{
+
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+
+}
+
+
+
+.card{
+
+
+background:#181825;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 0 20px #00ffcc55;
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+
+
+.card-content{
+
+padding:20px;
+
+}
+
+
+.card h3{
+
+color:#00ffcc;
+
+}
+
+
+
+.precio{
+
+font-size:25px;
+
+margin:15px 0;
+
+color:#fff;
+
+}
+
+
+
+button{
+
+background:#ff0055;
+
+border:none;
+
+padding:12px 25px;
+
+color:white;
+
+border-radius:20px;
+
+cursor:pointer;
+
+}
+
+
+
+
+button:hover{
+
+background:#ff3377;
+
+}
+
+
+
+
+/* CONTACTO */
+
+form{
+
+max-width:500px;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+
+
+input,textarea{
+
+padding:15px;
+border-radius:10px;
+border:none;
+
+}
+
+
+
+
+footer{
+
+background:#050505;
+
+padding:25px;
+
+text-align:center;
+
+color:#aaa;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+header h1{
+
+font-size:35px;
+
+}
+
+
+nav ul{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
 <body>
 
 
+
 <header>
-    <h1>GameControl Store</h1>
-    <p>Venta de Palancas para Videojuegos</p>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<h1>🎮 GameControl Store</h1>
+
+
+<p>
+Palancas profesionales para dominar tus videojuegos
+</p>
+
+
+<a class="btn" href="#productos">
+Comprar ahora
+</a>
+
+
 </header>
 
+
+
+
+
 <nav>
-    <ul>
-        <li>Inicio</li>
-        <li>Catálogo</li>
-        <li>Detalle de Producto</li>
-        <li>Carrito</li>
-        <li>Checkout</li>
-        <li>Perfil</li>
-        <li>Historial</li>
-        <li>Contacto</li>
-    </ul>
+
+<ul>
+
+<li><a href="#productos">Productos</a></li>
+<li><a href="#ofertas">Ofertas</a></li>
+<li><a href="#contacto">Contacto</a></li>
+
+
+</ul>
+
 </nav>
 
-<section id="inicio">
-    <h2>Inicio (Público)</h2>
-    <p>Promociones y productos destacados.</p>
+
+
+
+
+
+<section id="productos">
+
+
+<h2>🔥 Productos Gamer</h2>
+
+
+
+<div class="productos">
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://m.media-amazon.com/images/I/61w8L3x7XCL._AC_SL1500_.jpg">
+
+
+<div class="card-content">
+
+
+<h3>Joystick Arcade</h3>
+
+<p>
+Palanca profesional para juegos de pelea.
+</p>
+
+
+<div class="precio">
+$45
+</div>
+
+
+<button>
+Comprar
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://m.media-amazon.com/images/I/71sK9R7yHGL._AC_SL1500_.jpg">
+
+
+<div class="card-content">
+
+
+<h3>Control Gaming</h3>
+
+<p>
+Control inalámbrico de alta precisión.
+</p>
+
+
+<div class="precio">
+$60
+</div>
+
+
+<button>
+Comprar
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://m.media-amazon.com/images/I/61LtuGz1QQL._AC_SL1500_.jpg">
+
+
+<div class="card-content">
+
+
+<h3>Palanca Retro</h3>
+
+<p>
+Estilo arcade clásico.
+</p>
+
+
+<div class="precio">
+$35
+</div>
+
+
+<button>
+Comprar
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
 </section>
 
-<section id="catalogo">
-    <h2>Catálogo (Público)</h2>
-    <ul>
-        <li>Palancas Arcade</li>
-        <li>Palancas para PC</li>
-        <li>Palancas para PlayStation</li>
-        <li>Palancas para Xbox</li>
-        <li>Palancas Personalizadas</li>
-    </ul>
+
+
+
+
+
+
+
+<section id="ofertas">
+
+
+<h2>⚡ Ofertas Especiales</h2>
+
+
+<p style="text-align:center">
+
+20% descuento en controles seleccionados.
+
+</p>
+
+
 </section>
 
-<section id="detalle">
-    <h2>Detalle de Producto (Público)</h2>
-    <p>Descripción, especificaciones y reseñas.</p>
-</section>
 
-<section id="carrito">
-    <h2>Carrito (Autenticado)</h2>
-    <p>Productos agregados para comprar.</p>
-</section>
 
-<section id="checkout">
-    <h2>Checkout (Autenticado)</h2>
-    <p>Proceso de pago y envío.</p>
-</section>
 
-<section id="perfil">
-    <h2>Perfil de Usuario (Autenticado)</h2>
-    <p>Gestión de datos personales.</p>
-</section>
 
-<section id="historial">
-    <h2>Historial de Pedidos (Autenticado)</h2>
-    <p>Consulta de compras realizadas.</p>
-</section>
+
 
 <section id="contacto">
-    <h2>Contacto (Público)</h2>
-    <p>Formulario y soporte al cliente.</p>
+
+
+<h2>📩 Contacto</h2>
+
+
+<form>
+
+
+<input placeholder="Nombre">
+
+
+<input placeholder="Correo">
+
+
+<textarea placeholder="Mensaje"></textarea>
+
+
+<button>
+Enviar
+</button>
+
+
+</form>
+
+
 </section>
 
+
+
+
+
+
 <footer>
-    <p>© 2026 GameControl Store</p>
+
+
+© 2026 GameControl Store - Todos los derechos reservados 🎮
+
+
 </footer>
 
+
+
 </body>
+
+
 </html>
